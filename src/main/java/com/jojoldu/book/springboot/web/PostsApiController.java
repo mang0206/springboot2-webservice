@@ -31,3 +31,7 @@ public class PostsApiController {
     }
 
 }
+
+/*
+API 요청을 받을 Controller
+ */

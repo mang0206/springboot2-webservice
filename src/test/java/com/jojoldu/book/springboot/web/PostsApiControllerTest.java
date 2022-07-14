@@ -97,3 +97,9 @@ public class PostsApiControllerTest extends TestCase {
     }
 
 }
+
+/*
+HelloController와 달리 @WebMvcTest를 사용하지 않았다.
+@webMvcTest의 경우 JPA 기능이 작동하지 않기 때문인데, Controller와 ControllerAdvice 등 외부 연동과
+관련된 부분만 활성화되니 지금 같이 JPA 기능 까지 한번에 테스트 할 때는 @SpringBootTest와 TestRestTemplate을 사용하면 된다.
+ */

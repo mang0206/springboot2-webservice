@@ -51,3 +51,9 @@ public class Posts extends BaseTimeEntity {
         this.content = content;
     }
 }
+
+/*
+생성자와 빌더 : 둘다 생성 시점에 값을 채워주는 역할은 똑같다.
+다만, 생성자의 경우 지금 채워야 할 필드가 무엇인지 명확히 지정할 수 가 없다.
+빌더를 사용하는 경우 어느 필드에 어떤 값을 채워야 할지 명확하게 인지 할 수 있다.
+ */
