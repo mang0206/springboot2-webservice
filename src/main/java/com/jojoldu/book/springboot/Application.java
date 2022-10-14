@@ -14,3 +14,7 @@ public class Application {
     }
 }
 
+// main 메소드에서 실행하는 SpringApplication.run으로 인해 내장 WAS를 실행한다.
+// 내장 WAS란 별도로 외부에 WAS를 두지 않고 애플리케이션을 싱행할 때 내부에서 WAS를 실행하는것을 이야기한다.
+// 이렇게 되면 항상 서버에 톰캣을 설치할 필요가 없게 되고, 스프링 부트로 만들어진 jar 파일(실행 가능한 java 패키징 파일)로 실행하면 된다.
+
