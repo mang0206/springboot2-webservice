@@ -6,6 +6,12 @@
 @ GetMapping
 HTTP Method인 Get의  요청을 받을 수 있는 API를 만들어 준다.
 
+@ PutMapping
+HTTP Method인 Put의  요청을 받을 수 있는 API를 만들어 준다.
+
+@Controller
+적용된 클래스가 컨트롤러임을 나태내고, 자동으로 bean이 등록되어 Controller로 사용할 수 있다.
+
 <Junit Annotation>
 
 -- java/com/jojoldu/book/springboot/web/HelloControllerTest.java
