@@ -1,0 +1,75 @@
+<Spring Annotation>
+
+@ RestController
+컨트롤러를 JSON을 반환하는 컨트롤러로 만들어 준다.
+
+@ GetMapping
+HTTP Method인 Get의  요청을 받을 수 있는 API를 만들어 준다.
+
+<Junit Annotation>
+
+-- java/com/jojoldu/book/springboot/web/HelloControllerTest.java
+@ RunWith
+테스트를 진행할 때 Junit에 내장된 실행자 외에 다른 실행자를 실행시킨다.
+
+@ WebMvcTest
+여러 스프링 테스트 어노테이션 중, Web(Spring MVC)에 집중할 수 있는 어노테이션
+
+@ AutoWired
+스프링이 관리하는 빈을 주입 받는다
+
+-- java/com/jojoldu/book/springboot/web/domain/posts/PostsRepositoryTest.java
+@ After
+Junit에서 단위 테스트가 끝날 때마다 수행되는 메소드를 지정
+보통은 배포 전 전체 테스트를 수행할 때 테스트간 데이터 침범을 막기 위해 사용
+
+<Lombok Annotation>
+
+-- java/com/jojoldu/book/springboot/web/dto/HelloResponseDto.java
+@Getter
+선언된 모든 필드의 get 메소드를 생성해 준다.
+
+@RequiredArgsConstructor
+선언된 모든 final 필드가 포함된 생성자를 생성해 준다.
+final이 없는 필드는 생성자에 포함되지 않는다.
+
+-- java/com/jojoldu/book/springboot/domain/posts/Posts.java
+@NoArgsConstructor
+기본 생성자 자동 추가
+
+@Builder
+해당 클래스의 빌더 패턴 클래스를 생성
+생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
+
+<JPA Annotation>
+
+-- java/com/jojoldu/book/springboot/domain/posts/Posts.java
+@Entity
+테이블과 링크될 클래스임을 나타낸다
+
+@Id
+해당 테이블의 Pk 필드를 나타낸다
+
+@GeneratedValue
+Pk의 생성 규칙을 나타낸다.
+스프링 부트 2.0에서는 GenerationTpye.IDENTITY 옵션을 추가해햐만 auto increment가 된다
+
+@Column
+테이블의 칼럼을 나타내며 굳이 선언하지 않더라도 해당 클래스의 필드는 모두 칼럼이 된다
+사용하는 이유는, 기본값 외에 추가로 변경이 필요한 옵션이 있으면 사용한다.
+문자열의 경우 255가 기본인데, 사이즈를 500으로 늘리고 싶거나
+타입을 TEXT로 변경하고 싶거나 등의 경우에 사용
+
+-- java/com/jojoldu/book/springboot/domain/BaseTimeEntity.java
+@MappedSuperclass
+JPA Entity 클래스들이 BaseTimeEntity을 상속할 경우 필드들도 칼럼으로 인식하도록 한다.
+
+@EntityListensers(AuditingEntityListener.class)
+BaseTimeEntity 클래스에 Auditing 기능을 포함시킨다.
+
+@CreatedDate
+Entity가 생성되어 저장될 때 시간이 자동 저장된다.
+
+@LastModifiedDate
+조회한 Entity의 값을 변경할 때 시간이 자동 저장된다.
+
